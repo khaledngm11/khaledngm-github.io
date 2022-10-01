@@ -1,0 +1,171 @@
+<!doctype html><html lang=en><head><title>Text Manipulation Using Linux Commands · HOME</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.jsdelivr.net/; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="Khaled Ngm"><meta name=description content="Linux Text Processing Tools Link to heading grep
+cut
+sed
+sort
+uniq
+tr
+Examples ( most important )
+Log file analysis Frequency analysis 1. grep Link to heading GREP is a tool that uses Regular Expressions, and prints any lines which match a specified pattern .
+Syntax grep [options] pattern [files]
+Most important Options: -c: Count the number of lines that match a pattern. -h: Display the matched lines, but do not display the filenames."><meta name=keywords content="Red Team ,blog,pentester,penetration testesr,hacking"><meta name=twitter:card content="summary"><meta name=twitter:title content="Text Manipulation Using Linux Commands"><meta name=twitter:description content="Linux Text Processing Tools Link to heading grep
+cut
+sed
+sort
+uniq
+tr
+Examples ( most important )
+Log file analysis Frequency analysis 1. grep Link to heading GREP is a tool that uses Regular Expressions, and prints any lines which match a specified pattern .
+Syntax grep [options] pattern [files]
+Most important Options: -c: Count the number of lines that match a pattern. -h: Display the matched lines, but do not display the filenames."><meta property="og:title" content="Text Manipulation Using Linux Commands"><meta property="og:description" content="Linux Text Processing Tools Link to heading grep
+cut
+sed
+sort
+uniq
+tr
+Examples ( most important )
+Log file analysis Frequency analysis 1. grep Link to heading GREP is a tool that uses Regular Expressions, and prints any lines which match a specified pattern .
+Syntax grep [options] pattern [files]
+Most important Options: -c: Count the number of lines that match a pattern. -h: Display the matched lines, but do not display the filenames."><meta property="og:type" content="article"><meta property="og:url" content="https://khaledngm11.github.io/blog/posts/text-manipulation/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-03-05T00:00:00+00:00"><meta property="article:modified_time" content="2021-03-05T00:00:00+00:00"><link rel=canonical href=https://khaledngm11.github.io/blog/posts/text-manipulation/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/blog/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin=anonymous media=screen><link rel=stylesheet href=/blog/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css integrity="sha256-OeQafxa9+MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5><meta name=generator content="Hugo 0.104.2"></head><body class="preload-transitions colorscheme-auto"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/blog>HOME</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/blog/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/blog/posts/>Writeups</a></li><li class=navigation-item><a class=navigation-link href=/blog/contact/>Contact me</a></li><li class="navigation-item menu-separator"><span>|</span></li><li class=navigation-item><a href=https://khaledngm11.github.io/blog/pt-br/></a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://khaledngm11.github.io/blog/posts/text-manipulation/>Text Manipulation Using Linux Commands</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=2021-03-05T00:00:00Z>March 5, 2021</time></span>
+<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
+8-minute read</span></div></div></header><div><h2 id=linux-text-processing-tools>Linux Text Processing Tools
+<a class=heading-link href=#linux-text-processing-tools><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ul><li><p>grep</p></li><li><p>cut</p></li><li><p>sed</p></li><li><p>sort</p></li><li><p>uniq</p></li><li><p>tr</p></li><li><p>Examples ( most important )</p><ul><li>Log file analysis</li><li>Frequency analysis</li><li></li></ul></li></ul><h2 id=1-grep>1. grep
+<a class=heading-link href=#1-grep><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p><strong>GREP</strong> is a tool that uses Regular Expressions, and prints any lines which match a specified pattern .</p><p><code>Syntax</code>
+<code>grep [options] pattern [files]</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> Most important Options:
+</span></span><span style=display:flex><span>-c: Count the number of lines that match a pattern.
+</span></span><span style=display:flex><span>-h: Display the matched lines, but do not display the filenames.
+</span></span><span style=display:flex><span>-i: Ignore case for matching.
+</span></span><span style=display:flex><span>-l: Displays list of a filenames only.
+</span></span><span style=display:flex><span>-n: Display the matched lines with line numbers.
+</span></span><span style=display:flex><span>-v: Prints all the lines that do not match the pattern.
+</span></span><span style=display:flex><span>-e exp: Specifies expression with this option. Can use multiple times.
+</span></span><span style=display:flex><span>-f file: Takes patterns from a file.
+</span></span><span style=display:flex><span>-E: Treats pattern as an extended regular expression (ERE).
+</span></span><span style=display:flex><span>-w: Match whole word.
+</span></span><span style=display:flex><span>-o : Print only the matched parts of a matching line.
+</span></span></code></pre></div><h2 id=2-cut>2. cut
+<a class=heading-link href=#2-cut><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p><strong>CUT</strong> is a command-line tool for cutting text and writing the result to standard output .</p><p><code>Syntax</code>
+<code>cut [options] [files]</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>Most important Options: 
+</span></span><span style=display:flex><span>-b, --bytes=LIST        # select only these bytes
+</span></span><span style=display:flex><span>-c, --characters=LIST   # select only these characters
+</span></span><span style=display:flex><span>-d, --delimiter=DELIM   # use DELIM instead of TAB for field delimiter
+</span></span><span style=display:flex><span>-f, --fields=LIST       # select only these fields;  also print any line that 
+</span></span></code></pre></div><h2 id=3-sed>3. sed
+<a class=heading-link href=#3-sed><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p><strong>SED</strong> A stream editor is used to perform basic text transformations , such as searching , editing , replacing , insertion or deletion .</p><p><code>Syntax</code>
+<code>sed [options] [script] [files]</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> Most important Options: 
+</span></span><span style=display:flex><span>-n  : suppress automatic printing of pattern space
+</span></span><span style=display:flex><span>-e  : add the script to the commands to be executed
+</span></span><span style=display:flex><span>-f  : add the contents of script-file to the commands to be executed
+</span></span><span style=display:flex><span>-i  : Changes in orignal file
+</span></span><span style=display:flex><span>-r  : use extended regular expressions in the script
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>Operations:
+</span></span><span style=display:flex><span>s : for substitution
+</span></span><span style=display:flex><span>d : for deletion
+</span></span><span style=display:flex><span>p : Print out the pattern space (to the standard output). This command is usually only used in conjunction with the -n command-line option.
+</span></span><span style=display:flex><span>g : global replacement
+</span></span><span style=display:flex><span>i : Insert data  
+</span></span><span style=display:flex><span>a : Append data
+</span></span></code></pre></div><h2 id=4-sort>4. sort
+<a class=heading-link href=#4-sort><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p><strong>SORT</strong> is used to arrange lines numerically and alphabetically.</p><p><code>Syntax</code>
+<code>sort [options] [files]</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> Most important Options: 
+</span></span><span style=display:flex><span>-d, --dictionary-order : consider only blanks and alphanumeric characters
+</span></span><span style=display:flex><span>-f, --ignore-case : fold lower case to upper case characters
+</span></span><span style=display:flex><span>-M, --month-sort : compare (unknown) &lt; &#39;JAN&#39; &lt; ... &lt; &#39;DEC&#39;
+</span></span><span style=display:flex><span>-h, --human-numeric-sort : compare human readable numbers (e.g., 2K 1G)
+</span></span><span style=display:flex><span>-n, --numeric-sort : compare according to string numerical value
+</span></span><span style=display:flex><span>-R, --random-sort : shuffle, but group identical keys.  See shuf(1)
+</span></span><span style=display:flex><span>-r --reverse : reverse the result of comparisons
+</span></span></code></pre></div><h2 id=5-uniq>5. uniq
+<a class=heading-link href=#5-uniq><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p><strong>UNIQ</strong> is used to filters out the repeated lines in a file.</p><p><code>Syntax</code>
+<code>uniq [options] [files]</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> Most important Options: 
+</span></span><span style=display:flex><span>-c, --count : prefix lines by the number of occurrences
+</span></span><span style=display:flex><span>-d, --repeated : only print duplicate lines, one for each group
+</span></span><span style=display:flex><span>-D  : print all duplicate lines
+</span></span><span style=display:flex><span>-i, --ignore-case :  ignore differences in case when comparing
+</span></span><span style=display:flex><span>-u, --unique :  only print unique lines
+</span></span></code></pre></div><h2 id=6-tr>6. tr
+<a class=heading-link href=#6-tr><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p><strong>TR</strong> is a command line utility for translating or deleting characters, And support more complex translation .</p><p><code>Syntax</code>
+<code>tr [options] [set1] [set2]</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> Most important Options: 
+</span></span><span style=display:flex><span>-c : complements the set of characters in string.i.e., operations apply to characters not in the given set
+</span></span><span style=display:flex><span>-d : delete characters in the first set from the output.
+</span></span><span style=display:flex><span>-s : replaces repeated characters listed in the set1 with single occurrence
+</span></span><span style=display:flex><span>-t : truncates set1
+</span></span></code></pre></div><h2 id=example--logs-file-analysis->Example ( Logs File analysis )
+<a class=heading-link href=#example--logs-file-analysis-><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>First , you can use your apache2 logs file lacate in <code>/var/log/apache2/access.log</code>
+or you can download sample of logs file <a href=https://raw.githubusercontent.com/elastic/examples/master/Common%20Data%20Formats/apache_logs/apache_logs>here</a>.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>83.149.9.216 - - [17/May/2015:10:05:03 +0000] &#34;GET /presentations/logstash-monitorama-2013/images/kibana-search.png HTTP/1.1&#34; 200 203023 &#34;http://semicomplete.com/presentations/logstash-monitorama-2013/&#34; &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36&#34;
+</span></span><span style=display:flex><span>83.149.9.216 - - [17/May/2015:10:05:43 +0000] &#34;GET /presentations/logstash-monitorama-2013/images/kibana-dashboard3.png HTTP/1.1&#34; 200 171717 &#34;http://semicomplete.com/presentations/logstash-monitorama-2013/&#34; &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36&#34;
+</span></span><span style=display:flex><span>83.149.9.216 - - [17/May/2015:10:05:47 +0000] &#34;GET /presentations/logstash-monitorama-2013/plugin/highlight/highlight.js HTTP/1.1&#34; 200 26185 &#34;http://semicomplete.com/presentations/logstash-monitorama-2013/&#34; &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36&#34;
+</span></span><span style=display:flex><span>83.149.9.216 - - [17/May/2015:10:05:12 +0000] &#34;GET /presentations/logstash-monitorama-2013/plugin/zoom-js/zoom.js HTTP/1.1&#34; 200 7697 &#34;http://semicomplete.com/presentations/logstash-monitorama-2013/&#34; &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36&#34;
+</span></span><span style=display:flex><span>83.149.9.216 - - [17/May/2015:10:05:07 +0000] &#34;GET /presentations/logstash-monitorama-2013/plugin/notes/notes.js HTTP/1.1&#34; 200 2892 &#34;http://semicomplete.com/presentations/logstash-monitorama-2013/&#34; &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36&#34;
+</span></span><span style=display:flex><span>83.149.9.216 - - [17/May/2015:10:05:34 +0000] &#34;GET /presentations/logstash-monitorama-2013/images/sad-medic.png HTTP/1.1&#34; 200 430406 &#34;http://semicomplete.com/presentations/logstash-monitorama-2013/&#34; &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36&#34;
+</span></span></code></pre></div><p>It&rsquo;s a sample of logs that contain [IP addrss , Time , request type , path , HTTP version , status code , length , host , and user agent]</p><ul><li><h3 id=what-is-the-number-of-hosts-that-visited-website->What is the number of hosts that visited website ?
+<a class=heading-link href=#what-is-the-number-of-hosts-that-visited-website-><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li>First we have to use cut command with space delimeter and field 1 and that will print results like this .</li></ul><p><code>cat log.txt | cut -d '' -f 1</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>92.115.179.247
+</span></span><span style=display:flex><span>92.115.179.247
+</span></span><span style=display:flex><span>92.115.179.247
+</span></span><span style=display:flex><span>5.10.83.53
+</span></span><span style=display:flex><span>46.119.114.245
+</span></span><span style=display:flex><span>173.231.106.34
+</span></span><span style=display:flex><span>66.169.220.99
+</span></span><span style=display:flex><span>66.249.73.135
+</span></span></code></pre></div><ul><li>Then we have to delete duplicated lines with uniq command -d flag and wc command with -l flag to count the lines .</li></ul><p><code>cat log.txt | cut -d ' ' -f 1 | uniq -d | wc -l</code></p></li><li><h3 id=what-is-the-most-ip-that-visited-website-and-what-is-the-count-of-requests->What is the most IP that visited website and what is the count of requests ?
+<a class=heading-link href=#what-is-the-most-ip-that-visited-website-and-what-is-the-count-of-requests-><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li>We will use the previous command to cut IPs .</li><li>Then we should sort the lines before count as only sequential lines will be counted .</li></ul><p><code>cat log.txt | cut -d ' ' -f 1 | sort</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>99.252.100.83
+</span></span><span style=display:flex><span>99.252.100.83
+</span></span><span style=display:flex><span>99.252.100.83
+</span></span><span style=display:flex><span>99.252.100.83
+</span></span><span style=display:flex><span>99.252.100.83
+</span></span><span style=display:flex><span>99.252.100.83
+</span></span><span style=display:flex><span>99.252.100.83
+</span></span><span style=display:flex><span>99.33.244.41
+</span></span><span style=display:flex><span>99.33.244.41
+</span></span><span style=display:flex><span>99.33.244.41
+</span></span><span style=display:flex><span>99.33.244.41
+</span></span><span style=display:flex><span>99.33.244.41
+</span></span><span style=display:flex><span>99.33.244.41
+</span></span></code></pre></div><ul><li>After that we can pipe result with uniq -c to count the sequentioal repeted lines .</li></ul><p><code>cat log.txt | cut -d ' ' -f 1 | sort | uniq -c</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span> 2 98.245.87.136
+</span></span><span style=display:flex><span> 5 98.248.53.169
+</span></span><span style=display:flex><span> 10 98.252.226.135
+</span></span><span style=display:flex><span> 1 98.64.39.111
+</span></span><span style=display:flex><span> 2 98.85.3.179
+</span></span><span style=display:flex><span> 1 99.100.25.83
+</span></span><span style=display:flex><span> 5 99.101.69.97
+</span></span><span style=display:flex><span> 2 99.11.114.240
+</span></span><span style=display:flex><span> 1 99.146.78.10
+</span></span></code></pre></div><ul><li>As we realize we need to rearrange results with sort -n(numerical) -r (reverse order).</li></ul><p><code>cat log.txt | cut -d ' ' -f 1 | sort | uniq -c | sort -nr</code></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>  482 66.249.73.135
+</span></span><span style=display:flex><span>  364 46.105.14.53
+</span></span><span style=display:flex><span>  357 130.237.218.86
+</span></span><span style=display:flex><span>  273 75.97.9.59
+</span></span><span style=display:flex><span>  113 50.16.19.13
+</span></span><span style=display:flex><span>  102 209.85.238.199
+</span></span></code></pre></div></li><li><h3 id=are-there-any-malicious-attack->Are there any malicious attack ?
+<a class=heading-link href=#are-there-any-malicious-attack-><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3></li><li><h3 id=what-is-the-most-user-agents-that-visited-website->What is the most user agents that visited website ?
+<a class=heading-link href=#what-is-the-most-user-agents-that-visited-website-><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3></li></ul><h2 id=example--frequency-analysis->Example ( Frequency Analysis )
+<a class=heading-link href=#example--frequency-analysis-><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ul><li><h3 id=what-is-frequency-analysis->What is frequency analysis ?
+<a class=heading-link href=#what-is-frequency-analysis-><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3></li></ul><p>In statistics, frequency is the number of times an event occurs. Frequency Analysis is an important area of statistics that deals with the number of occurrences of letters .</p><p>In cryptanalysis, frequency analysis (also known as counting letters) is the study of the frequency of letters or groups of letters in a ciphertext. The method is used as an aid to breaking classical ciphers , you can read <a href=https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html>more</a></p><p>consider we have [hello world] ,
+then frequency of [l] is 3 and frequency of [o] is two etc.</p><ul><li><h3 id=what-is-our-goal->What is our goal ?
+<a class=heading-link href=#what-is-our-goal-><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li>first of all , We get a cipher text and our goal is to calculate frequency of each letter in order.</li><li>Then we have a standard frequency for most common letters <code>ETAOINSHRDLCUMWFGYPBVKJXQZ</code> .</li><li>finally we change most common letter in cipher text with standard most common letter to get plain text .</li></ul></li><li><h3 id=try-to-decrypt-this-cypher-text-using-frequency-analysis->Try to decrypt this cypher text using frequency analysis .
+<a class=heading-link href=#try-to-decrypt-this-cypher-text-using-frequency-analysis-><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3></li></ul><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>YSZ MZYSWQWPWIH FZSVUQ KRZBNZUOH XUXPHTVT RZPVZT WU YSZ KXOY YSXY VU XUH PXUINXIZ, ZXOS PZYYZR SXT VYT WLU GZRTWUXPVYH. YSZ MWTY WFEVWNT YRXVY YSXY PZYYZRT SXEZ VT YSZ KRZBNZUOH LVYS LSVOS YSZH XGGZXR VU X PXUINXIZ. OPZXRPH VU ZUIPVTS YSZ PZYYZR &#34;B&#34; XGGZXRT KXR PZTT KRZBNZUYPH YSXU, TXH, &#34;X&#34;. VU YVMZT IWUZ FH, VK HWN LXUYZQ YW KVUQ WNY YSZ KRZBNZUOVZT WK PZYYZRT LVYSVU X PXUINXIZ, HWN SXQ YW KVUQ X PXRIZ GVZOZ WK YZAY XUQ OWNUY ZXOS KRZBNZUOH. UWL, SWLZEZR, LZ SXEZ OWMGNYZRT YSXY OXU QW YSZ SXRQ LWRD KWR NT. FNY VU KXOY, LZ QWU&#39;Y ZEZU UZZQ YW QW YSVT TYZG, XT KWR MWTY PXUINXIZT YSZRZ XRZ QXYXFXTZT WK YSZ PZYYZR KRZBNZUOVZT, LSVOS SXEZ FZZU OXPONPXYZQ FH PWWDVUI XY MVPPVWUT WK YZAYT, XUQ XRZ YSNT EZRH SVISPH XOONRXYZ.
+</span></span></code></pre></div><ol><li>Try to get most common repeated letters in this cypher text using grep , sort and uniq commands .</li></ol><p><code>cat frequency.txt | grep -o . | sort | uniq | sort -nr</code></p><p>we will get most common letters that will be <code>ZYXUSWVTRPNOKHQILGFEBMDAB</code> if are there any characters with zero frequency put them at the last and
+maybe some characters will have the frequency &mldr; you have to try to change position every time to get plain text , after I tried I got the right<br>frequency , <code>ZYXWVUTSRQPONMLKIHGFEDCAB</code> and you can use online <a href=https://md5decrypt.net/en/Letters-frequency-analysis/>tools</a> to decrypt it</p><ol start=2><li>Finally I have to change each character with equivalent character with tr command .</li></ol><p><code>cat frequency.txt | tr 'ZYXWVUTSRQPONMLKIHGFEDCAB' 'ETAOINSHRDLCUMWFGYPBVKJXQZ'</code></p><p><strong>finally I got the plain text</strong></p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>THE METHODOLOGY BEHIND FREQUENCY ANALYSIS RELIES ON THE FACT THAT IN ANY LANGUAGE, EACH LETTER HAS ITS OWN PERSONALITY. THE MOST OBVIOUS TRAIT THAT LETTERS HAVE IS THE FREQUENCY WITH WHICH THEY APPEAR IN A LANGUAGE. CLEARLY IN ENGLISH THE LETTER &#34;Q&#34; APPEARS FAR LESS FREQUENTLY THAN, SAY, &#34;A&#34;. IN TIMES GONE BY, IF YOU WANTED TO FIND OUT THE FREQUENCIES OF LETTERS WITHIN A LANGUAGE, YOU HAD TO FIND A LARGE PIECE OF TEXT AND COUNT EACH FREQUENCY. NOW, HOWEVER, WE HAVE COMPUTERS THAT CAN DO THE HARD WORK FOR US. BUT IN FACT, WE DON&#39;T EVEN NEED TO DO THIS STEP, AS FOR MOST LANGUAGES THERE ARE DATABASES OF THE LETTER FREQUENCIES, WHICH HAVE BEEN CALCULATED BY LOOKING AT MILLIONS OF TEXTS, AND ARE THUS VERY HIGHLY ACCURATE.
+</span></span></code></pre></div></div><footer></footer></article></section></div><footer class=footer><section class=container>©
+2022
+Khaled Ngm
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/blog/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js integrity="sha256-I2BJOV3DaC+ycZZAhylY4S8fJAZ7sJwyeyM+YpDH7aw="></script></body></html>
