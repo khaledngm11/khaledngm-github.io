@@ -108,7 +108,7 @@ author = "authors"
 name = "Github"
 icon = "fa fa-2x fa-github"
 weight = 1
-url = "https://github.com/johndoe/"
+url = "https://github.com/khaledngm11"
 
 
 
@@ -116,54 +116,44 @@ url = "https://github.com/johndoe/"
 name = "Twitter"
 icon = "fa fa-2x fa-twitter"
 weight = 3
-url = "https://twitter.com/johndoe/"
+url = "https://twitter.com/ngm_404"
 
 [[params.social]]
-name = "Medium"
+name = "Telegram"
 icon = "fa fa-2x fa-telegram"
 weight = 1
-url = "https://medium.com/@johndoe"
+url = "https://t.me/ngm_404"
 
 
 [[params.social]]
 name = "LinkedIn"
 icon = "fa fa-2x fa-linkedin"
 weight = 4
-url = "https://www.linkedin.com/in/johndoe/"
+url = "https://www.linkedin.com/in/khaled-eid-7081b11b2"
+
+
 
 [[params.social]]
-name = "Medium"
-icon = "fa fa-2x fa-medium"
-weight = 5
-url = "https://medium.com/@johndoe"
-
-[[params.social]]
-name = "Medium"
+name = "Facebook"
 icon = "fa fa-2x fa-facebook"
 weight = 5
-url = "https://medium.com/@johndoe"
+url = "https://www.facebook.com/ngm404"
+
+
 
 [[params.social]]
-name = "Medium"
-icon = "fa fa-2x fa-instagram"
-weight = 5
-url = "https://medium.com/@johndoe"
-
-[[params.social]]
-name = "Medium"
+name = "Google"
 icon = "fa fa-2x fa-google"
 weight = 5
-url = "https://medium.com/@johndoe"
+url = "mailto:khaledngm11@gmail.com"
 
 
 
 [[params.social]]
-name = "Medium"
+name = "Whatsapp"
 icon = "fa fa-2x fa-whatsapp"
 weight = 5
-url = "https://medium.com/@johndoe"
-
-
+url = "https://wa.me/01099301482"
 
 
 [languages.en]
