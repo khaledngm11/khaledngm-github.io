@@ -5,7 +5,7 @@ date = "2022-07-04"
 description = ""
 +++
 # Previse write-up HackTheBox
-![previse](/blog/images/1.png)
+![previse](/images/1.png)
 ### 1. Port Scan Enumuration
 ### 2. Exploitation
 ### 3. Privilege Escalation
@@ -52,7 +52,7 @@ Nmap done: 1 IP address (1 host up) scanned in 515.82 seconds
 *  I tried to create account or visit any another links but pages have been redirected to ``login.php`` with ``302 Found``
 * So I tried to edit response with ``200 ok`` and send it back to the server .
 
-![](/blog/images/3.png)
+![](/images/3.png)
 
 * And I got a registration form , Then I created a new account.
 * When I logged in I found visited ``files`` menu and found ``SITEBACKUP.ZIP`` file .

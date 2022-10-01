@@ -21,7 +21,7 @@ sense and some knowledge about basic *nix commands .
 ## level0
   * then let's use ``ls -la`` command to list files and directories.
 
-  ![List Directories](/blog/images/131196663-0b273faf-2a2a-45a9-95d1-3474616d3c7a.png)
+  ![List Directories](/images/131196663-0b273faf-2a2a-45a9-95d1-3474616d3c7a.png)
   
   * If we changed direcory to ``.backup`` directory we will find `bookmarks.html` text file .
   * Let's ``grep`` to get any interesting data about next level `leviathan1` .
@@ -32,11 +32,11 @@ sense and some knowledge about basic *nix commands .
   * ``ssh leviathan1@leviathan.labs.overthewire.org -p 2223`` and password ``rioGegei8m``
   *   we found elf executable file called `check`, let's execute it .
 
-      ![need pass](/blog/images/131198175-3d06a1ce-52d1-4f57-9d17-dde7da578114.png)
+      ![need pass](/images/131198175-3d06a1ce-52d1-4f57-9d17-dde7da578114.png)
 
   * As we see it needs a password , so let's use ``ltrace ./check`` command with a wrong password .
 
-     ![compare](/blog/images/131198440-93937c11-d39e-464e-b966-049d57452b74.png)
+     ![compare](/images/131198440-93937c11-d39e-464e-b966-049d57452b74.png)
   * We realize that it compare the password with ``sex`` word , so we can enter password to reed leviathan2 pass from ``/etc/leviathan_pass/leviathan2``.
 ## level2
   *  ``ssh leviathan2@leviathan.labs.overthewire.org -p 2223`` and password ``ougahZi8Ta``
