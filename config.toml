@@ -1,4 +1,4 @@
-baseURL = "https://khaledngm11.github.io/blog/"
+baseURL = "https://khaledngm11.github.io/"
 title = "HOME"
 theme = "hugo-coder"
 languageCode = "en"
