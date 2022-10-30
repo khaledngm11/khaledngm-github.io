@@ -5,8 +5,8 @@ date = "2022-10-29"
 description = ""
 +++
 
-# Faculty write-up HackTheBox
-![faculty](/images/shared/shared.png)
+# Shared write-up HackTheBox
+![shared](/images/shared/shared.png)
 
 ### 1. Port Scanning and Enumuration
 ### 2. Exploitation
